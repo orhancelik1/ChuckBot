@@ -8,7 +8,6 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix = ["ec!","Ec!","EC!","eC!"],case_insensitive=True)
 client = discord.Client()
-TOKEN = "OTA5OTM4NjM5NzA0ODM4MTU2.YZLkZQ.PSWryYPKXdQXa1kwOIsf5eZdlUI"
 benzin = "Benzini Shell'den yarrağı kelden diyorlar doğru mu abla? Bilmem doğrudur herhalde!"
 kaan = "Ben Orhan'ın karısıyım. Bana ondan başkası sahip olamaz!"
 orhan = "Kaan'ın kocası. Boş zamanlarını onu pompalamakla geçirir."
@@ -80,4 +79,4 @@ async def on_message(message):
 
 
 
-bot.run(TOKEN)
+bot.run(os.getenv('TOKEN'))
