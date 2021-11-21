@@ -4,7 +4,9 @@ import requests
 import json
 import random
 from googletrans import Translator
+from discord.ext import commands
 
+bot = commands.Bot(command_prefix = ["ec!","Ec!","EC!","eC!"],case_insensitive=True)
 client = discord.Client()
 
 benzin = "Benzini Shell'den yarrağı kelden diyorlar doğru mu abla? Bilmem doğrudur herhalde!"
@@ -43,7 +45,7 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 
-@client.event
+@bot.event
 async def on_message(message):
     if message.author == client.user:
         return
@@ -78,4 +80,4 @@ async def on_message(message):
 
 
 
-client.run(os.getenv('TOKEN'))
+bot.run(os.getenv('TOKEN'))
